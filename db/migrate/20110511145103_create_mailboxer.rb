@@ -40,18 +40,18 @@ class CreateMailboxer < ActiveRecord::Migration
   	#Messages  
   	add_index "notifications","conversation_id"
   
-  #Foreign keys    
-  	#Conversations
-  	#Receipts
-  	add_foreign_key "receipts", "notifications", :name => "receipts_on_notification_id"
-  	#Messages  
-  	add_foreign_key "notifications", "conversations", :name => "notifications_on_conversation_id"
+  # #Foreign keys    
+  # 	#Conversations
+  # 	#Receipts
+  # 	add_foreign_key "receipts", "notifications", :name => "receipts_on_notification_id"
+  # 	#Messages  
+  # 	add_foreign_key "notifications", "conversations", :name => "notifications_on_conversation_id"
   end
   
   def self.down
-  #Tables  	
-  	remove_foreign_key "receipts", :name => "receipts_on_notification_id"
-  	remove_foreign_key "notifications", :name => "notifications_on_conversation_id"
+  # #Tables  	
+  # 	remove_foreign_key "receipts", :name => "receipts_on_notification_id"
+  # 	remove_foreign_key "notifications", :name => "notifications_on_conversation_id"
   	
   #Indexes
     drop_table :receipts
